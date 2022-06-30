@@ -43,3 +43,20 @@ ReactDOM.render(
   element3,
   document.getElementById('root3')
 )
+
+
+document.querySelectorAll('.button').forEach(domNode => {
+  const messageId = parseInt(domNode.dataset.messageId);
+
+  ReactDOM.render(
+    React.createElement(
+      'button',
+      {
+        onClick: () => {console.log(`liked message: ${messageId}`)}
+      },
+      "Like"
+    ),
+    domNode
+  );
+
+});
